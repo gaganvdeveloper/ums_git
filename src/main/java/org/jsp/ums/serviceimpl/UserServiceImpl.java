@@ -19,6 +19,12 @@ public class UserServiceImpl implements UserService {
 	public ResponseEntity<?> saveUser(User user) {
 		return ResponseEntity.status(HttpStatus.OK).body(ResponseStructure.builder().status(HttpStatus.OK.value()).message("User Created Successfully...").body(userDao.saveUser(user)).build());
 	}
+
+	@Override
+	public ResponseEntity<?> updateUserById(User user) {
+		userDao.updateUserById(user);
+		return ResponseEntity.status(HttpStatus.OK).body(ResponseStructure.builder().status(HttpStatus.OK.value()).message("User Updated Successfully").body(userDao.updateUserById(user)).build());
+	}
 	
 	
 	

@@ -17,4 +17,8 @@ public class UserDaoImpl implements UserDao {
 		return repository.save(user);
 	}
 
+	@Override
+	public User updateUserById(User user) {
+		return repository.save(user);
+	}
 }

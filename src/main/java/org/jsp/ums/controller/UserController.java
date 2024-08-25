@@ -4,9 +4,6 @@ import org.jsp.ums.entity.User;
 import org.jsp.ums.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +20,11 @@ public class UserController {
 	@PostMapping
 	public ResponseEntity<?> saveUser(@RequestBody User user){
 		return userService.saveUser(user);
+	}
+	
+	@PutMapping
+	public ResponseEntity<?> updateUserById(@RequestBody User user) {
+		return userService.updateUserById(user);
 	}
 
 //	@PutMapping        													// Vikas and Group
