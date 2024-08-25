@@ -1,5 +1,7 @@
 package org.jsp.ums.serviceimpl;
 
+import java.util.Optional;
+
 import org.jsp.ums.dao.UserDao;
 import org.jsp.ums.entity.User;
 import org.jsp.ums.responsestructure.ResponseStructure;
@@ -18,6 +20,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public ResponseEntity<?> saveUser(User user) {
 		return ResponseEntity.status(HttpStatus.OK).body(ResponseStructure.builder().status(HttpStatus.OK.value()).message("User Created Successfully...").body(userDao.saveUser(user)).build());
+	}
+
+	@Override
+	public ResponseEntity<?> findAllUsersById(int id) {
+		Optional<User> optional=userDao.daofindUserById(id);
+		return ResponseEntity.status(HttpStatus.OK).body(ResponseStructure.builder().status(HttpStatus.FOUND.value()).message("User Found").body(optional.get()).build());
 	}
 	
 	
