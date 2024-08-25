@@ -1,5 +1,7 @@
 package org.jsp.ums.daoimpl;
 
+import java.util.Optional;
+
 import org.jsp.ums.dao.UserDao;
 import org.jsp.ums.entity.User;
 import org.jsp.ums.repository.UserRepository;
@@ -15,6 +17,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public User saveUser(User user) {
 		return repository.save(user);
+	}
+
+	@Override
+	public Optional<User> daofindUserById(int id) {
+		return repository.findById(id);
 	}
 
 }
