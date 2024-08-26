@@ -1,12 +1,14 @@
 package org.jsp.ums.controller;
 
 import org.jsp.ums.entity.User;
+import org.jsp.ums.responsestructure.ResponseStructure;
 import org.jsp.ums.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,9 +31,16 @@ public class UserController {
 	
 	
 //	@GetMapping(value =  "/{id}")   												// Bharath  & vamshi & Venkatesh
+	@GetMapping("/{id}")
+	public ResponseEntity<?> findUserById(@PathVariable int id)
+	{
+		return userService.findUserById(id);
+	}
 	
 	
 //	@GetMapping     													// Misba and Group
+	
+	
 	
 	
 //	@PatchMapping(value = "/inactive/{id}")								// Rizwan
@@ -44,6 +53,11 @@ public class UserController {
 	
 	
 //	@DeleteMapping(value =  "/{id}") 									// Chetana and Group
+	@DeleteMapping("/{id}")
+	public ResponseEntity<?> deleteUserById(@PathVariable int id)
+	{
+		return userService.deleteUserById(id);
+	}
 	
 	
 	
