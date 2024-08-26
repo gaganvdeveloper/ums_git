@@ -8,5 +8,7 @@ public interface UserService {
 	ResponseEntity<?> saveUser(User user);
 
 	ResponseEntity<?> findAllUsersById(int id);
+
+	ResponseEntity<?> findAllUsers();
 	
 }

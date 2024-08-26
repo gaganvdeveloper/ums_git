@@ -29,7 +29,8 @@ public class UserController {
 //	@PutMapping        													// Vikas and Group
 	
 	
-	@GetMapping(value =  "/{id}")		// Bharath  & vamshi & Venkatesh
+
+	@GetMapping(value =  "/{id}")										// Bharath  & vamshi & Venkatesh
 	public ResponseEntity<?> allUserById(@PathVariable int id)
 	{
 		return userService.findAllUsersById(id);
@@ -37,7 +38,10 @@ public class UserController {
 	
 	
 //	@GetMapping     													// Misba and Group
-	
+	public ResponseEntity<?> finmdAllUsers()
+	{
+		return userService.findAllUsers();
+	}
 	
 //	@PatchMapping(value = "/inactive/{id}")								// Rizwan
 	
