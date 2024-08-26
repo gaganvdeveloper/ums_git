@@ -30,4 +30,10 @@ public class UserDaoImpl implements UserDao {
 		return repository.findAll();
 	}
 
+	@Override
+	public void deleteUserById(int id) {
+		repository.deleteById(id);
+		
+	}
+
 }

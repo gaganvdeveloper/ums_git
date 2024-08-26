@@ -53,6 +53,11 @@ public class UserController {
 	
 	
 //	@DeleteMapping(value =  "/{id}") 									// Chetana and Group
+	@DeleteMapping(value="/{id}")
+	public ResponseEntity<?> deleteUserById(@PathVariable int id)
+	{
+		return userService.deleteUserById(id);
+	}
 	
 	
 	

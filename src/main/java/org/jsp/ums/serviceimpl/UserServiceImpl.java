@@ -45,4 +45,19 @@ public class UserServiceImpl implements UserService {
 		return ResponseEntity.status(HttpStatus.OK).body(ResponseStructure.builder().status(HttpStatus.OK.value()).message("All Active Users Found Successfully..").body(al).build());
 	}
 
+	@Override
+	public ResponseEntity<?> deleteUserById(int id) {
+		Optional<User> optional = userDao.daofindUserById(id);
+		if(optional.isPresent())
+		{
+			userDao.deleteUserById(id);
+			return ResponseEntity.status(HttpStatus.OK).body(ResponseStructure.builder().status(HttpStatus.OK.value()).message("User deleted successfully").body("User deleted permanently").build());
+		}
+		else
+		{
+			return ResponseEntity.status(HttpStatus.OK).body(ResponseStructure.builder().status(HttpStatus.BAD_REQUEST.value()).message("User deleted successfully").body("Invalid user id").build());
+		}
+		
+
+}
 }

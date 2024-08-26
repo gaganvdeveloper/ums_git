@@ -10,5 +10,7 @@ public interface UserService {
 	ResponseEntity<?> findAllUsersById(int id);
 
 	ResponseEntity<?> findAllUsers();
+
+	ResponseEntity<?> deleteUserById(int id);
 	
 }
