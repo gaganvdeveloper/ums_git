@@ -1,5 +1,6 @@
 package org.jsp.ums.daoimpl;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.jsp.ums.dao.UserDao;
@@ -22,6 +23,11 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public Optional<User> daofindUserById(int id) {
 		return repository.findById(id);
+	}
+
+	@Override
+	public List<User> findAllUsers() {
+		return repository.findAll();
 	}
 
 }

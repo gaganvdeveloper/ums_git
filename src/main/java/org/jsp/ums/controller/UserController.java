@@ -38,7 +38,10 @@ public class UserController {
 	
 	
 //	@GetMapping     													// Misba and Group
-	
+	public ResponseEntity<?> finmdAllUsers()
+	{
+		return userService.findAllUsers();
+	}
 	
 //	@PatchMapping(value = "/inactive/{id}")								// Rizwan
 	
